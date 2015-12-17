@@ -1,6 +1,6 @@
 Package.describe({
   summary: "Help managing adverts.",
-  version: "1.1.0",
+  version: "1.1.1",
   name: "elie:ad-manager",
   git: "https://github.com/elie222/meteor-ad-manager.git"
 });
@@ -39,6 +39,7 @@ function configure(api) {
   api.use('aldeed:delete-button@2.0.0');
   api.use('mdg:validated-method@0.2.2');
   api.use('alanning:roles@1.2.14');
+  api.use('zimme:collection-timestampable@1.0.9');
 
   // both
   api.addFiles('lib/helpers.js');
