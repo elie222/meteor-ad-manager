@@ -17,12 +17,12 @@
               <!-- <th>Extra Data</th> -->
               <th class="text-center">Clicks</th>
               <th>Delete</th>
-              <!-- <th>Disable</th> -->
+              <th>Disable</th>
             </tr>
           </thead>
           <tbody>
             {{#each adverts}}
-              <tr>
+              <tr class="{{#if disabled}}bg-danger{{/if}}">
                 <td>{{> adManagerAd ad=this height='60px' dontRegisterClick=true}}</td>
                 <td>{{name}}</td>
                 <td style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{url}}</td>
@@ -32,11 +32,11 @@
                 <td class="text-center">{{clicks}}</td>
                 <td>{{> quickRemoveButton collection="AdManagerAdverts" _id=this._id
                           class="btn btn-danger btn-xs" beforeRemove=beforeRemove}}</td>
-<!--                 <td>
-                  <button type="button" class="btn btn-warning btn-xs">
+                <td>
+                  <button type="button" class="btn {{#if disabled}}btn-success{{else}}btn-warning{{/if}} btn-xs btn-disable">
                     {{#if disabled}}Enable{{else}}Disable{{/if}}
                   </button>
-                </td> -->
+                </td>
               </tr>
             {{/each}}
           </tbody>

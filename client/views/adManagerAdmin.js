@@ -35,5 +35,19 @@ Template.adManagerAdmin.events({
     const imageUrl = AutoForm.getFieldValue('imageUrl', 'insertAdManagerAdvertsForm');
 
     Template.instance().previewAd.set({ url, imageUrl });
+  },
+  'click .btn-disable': function () {
+    const _id = this._id;
+    const disabled = !this.disabled;
+
+    console.log(_id);
+    console.log(disabled);
+    
+    AdManager.disableAdvert.call({
+      _id,
+      disabled
+    }, (err) => {
+      console.log(err);
+    });
   }
 });

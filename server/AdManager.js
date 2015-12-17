@@ -4,7 +4,7 @@ AdManager.getCachedAdverts = function () {
 
 // this doesn't work when running multiple instances
 AdManager._cacheAdverts = function () {
-  this._cache = AdManagerAdverts.find({}).fetch();
+  this._cache = AdManagerAdverts.find({disabled: {$ne: true}}).fetch();
 }
 
 Meteor.startup(() => AdManager._cacheAdverts());
