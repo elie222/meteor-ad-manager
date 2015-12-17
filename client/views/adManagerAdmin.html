@@ -9,26 +9,34 @@
         <table class="table table-hover">
           <thead>
             <tr>
+              <th>Preview</th>
               <th>Name</th>
               <th>Url</th>
               <!-- <th>Text</th> -->
               <th>Image URL</th>
               <!-- <th>Extra Data</th> -->
-              <th>Clicks</th>
+              <th class="text-center">Clicks</th>
               <th>Delete</th>
+              <!-- <th>Disable</th> -->
             </tr>
           </thead>
           <tbody>
             {{#each adverts}}
               <tr>
+                <td>{{> adManagerAd ad=this height='60px' dontRegisterClick=true}}</td>
                 <td>{{name}}</td>
                 <td style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{url}}</td>
                 <!-- <td>{{text}}</td> -->
                 <td style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{imageUrl}}</td>
                 <!-- <td>{{extraData}}</td> -->
-                <td>{{clicks}}</td>
+                <td class="text-center">{{clicks}}</td>
                 <td>{{> quickRemoveButton collection="AdManagerAdverts" _id=this._id
                           class="btn btn-danger btn-xs" beforeRemove=beforeRemove}}</td>
+<!--                 <td>
+                  <button type="button" class="btn btn-warning btn-xs">
+                    {{#if disabled}}Enable{{else}}Disable{{/if}}
+                  </button>
+                </td> -->
               </tr>
             {{/each}}
           </tbody>
@@ -44,7 +52,7 @@
     <h2>Selected Ad {{#if selectedAd}}<small>{{selectedAd.name}}</small>{{/if}}</h2>
     
     {{#if selectedAd}}
-      {{> adManagerAd ad=selectedAd}}
+      {{> adManagerAd ad=selectedAd dontRegisterClick=true}}
     {{else}}
       <p>Click on an ad in the table to view it.</p>
     {{/if}}
@@ -63,7 +71,7 @@
       <div class="col-sm-6">
         <h2>Preview</h2>
         <div>
-          {{> adManagerAd ad=previewAd}}
+          {{> adManagerAd ad=previewAd dontRegisterClick=true}}
         </div>
         <button type="button" id="btn-reload" class="btn btn-success">Reload</button>
       </div>

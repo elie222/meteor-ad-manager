@@ -18,6 +18,8 @@ Template.adManagerRandomAd.helpers({
 
 Template.adManagerAd.events({
   'click a': function (e) {
-    AdManager.clickAdvert.call({_id: this._id});
+    if (!Template.currentData().dontRegisterClick) {
+      AdManager.clickAdvert.call({_id: this._id});
+    }
   }
 });

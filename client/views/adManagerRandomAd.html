@@ -1,11 +1,11 @@
 <template name="adManagerRandomAd">
-  {{> adManagerAd ad=ad}}
+  {{> adManagerAd ad=ad height=height width=width}}
 </template>
 
 <template name="adManagerAd">
   {{#with ad}}
     <a href="{{url}}" target="_blank">
-     <img src="{{imageUrl}}" />
+     <img src="{{imageUrl}}" height="{{../height}}" width="{{../width}}" />
     </a>
   {{/with}}
 </template>
