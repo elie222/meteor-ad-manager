@@ -40,9 +40,6 @@ Template.adManagerAdmin.events({
     const _id = this._id;
     const disabled = !this.disabled;
 
-    console.log(_id);
-    console.log(disabled);
-    
     AdManager.disableAdvert.call({
       _id,
       disabled
