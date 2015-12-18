@@ -17,7 +17,10 @@ Template.adManagerRandomAd.helpers({
 });
 
 Template.adManagerAd.events({
-  'click a': function (e) {
+  // contextmenu captures right clicks. Doesn't mean the user necessarily navigated to that
+  // page when he right clicks, but good chance he did. Not sure there's an easy way to know
+  // for sure if someone right clicked and then opened in a new tab
+  'click a, contextmenu a': function (e) {
     if (!Template.currentData().dontRegisterClick) {
       AdManager.clickAdvert.call({_id: this._id});
     }
