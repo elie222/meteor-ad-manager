@@ -1,6 +1,6 @@
 Package.describe({
-  summary: "Help managing adverts.",
-  version: "1.1.3",
+  summary: "Management tools adverts for advertisements.",
+  version: "1.2.1",
   name: "elie:ad-manager",
   git: "https://github.com/elie222/meteor-ad-manager.git"
 });
