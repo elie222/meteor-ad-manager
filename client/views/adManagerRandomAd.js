@@ -23,6 +23,17 @@ Template.adManagerAd.events({
   'click a, contextmenu a': function (e) {
     if (!Template.currentData().dontRegisterClick) {
       AdManager.clickAdvert.call({_id: this._id});
+
+      if (Package['okgrow:analytics']) {
+        const options = {
+          "Link Url": this.url,
+          "Advert Name": this.name,
+          "Image Url": this.imageUrl,
+          "Type": "Advert",
+        };
+
+        analytics.track('Advert Clicked', options);
+      }
     }
   }
 });

@@ -1,6 +1,6 @@
 Package.describe({
   summary: "Help managing adverts.",
-  version: "1.1.2",
+  version: "1.1.3",
   name: "elie:ad-manager",
   git: "https://github.com/elie222/meteor-ad-manager.git"
 });
@@ -17,8 +17,8 @@ Package.onTest(function(api) {
 
   api.use('tinytest');
 
-  api.addFiles('tests/helpers.js')
-  api.addFiles('tests/adManagerTests.js')
+  api.addFiles('tests/helpers.js');
+  api.addFiles('tests/adManagerTests.js');
 
   api.export('AdManagerAdverts');
 });
@@ -40,6 +40,7 @@ function configure(api) {
   api.use('mdg:validated-method@0.2.2');
   api.use('alanning:roles@1.2.14');
   api.use('zimme:collection-timestampable@1.0.9');
+  api.use('okgrow:analytics@1.0.4', { weak: true });
 
   // both
   api.addFiles('lib/helpers.js');

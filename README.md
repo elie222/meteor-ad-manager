@@ -28,4 +28,6 @@ The admin template is:
 
 The admin template uses `bootstrap` classes for styling. This package doesn't bring any of its own CSS with it.
 
-The `adManagerAdmin` template gives you the ability to add or delete an advert. It also allows you to preview an advert and see how many times it has been clicked.
+## Analytics Integration
+
+If you use the `okgrow:analytics` package, each advert click will be tracked as an analytics event and include all the information relating to the advert (advert id, url and image url).
