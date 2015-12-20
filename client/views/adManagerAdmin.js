@@ -14,7 +14,7 @@ Template.adManagerAdmin.helpers({
       const doc = collection.findOne(_id);
 
       if (confirm(`Really delete ${doc.name}?`)) {
-        AdManager.removeAdvertById(_id);
+        AdManager.removeAdvertById.call({ _id });
       }
     };
   },
