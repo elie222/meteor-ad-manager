@@ -1,11 +1,12 @@
 <template name="adManagerRandomAd">
-  {{> adManagerAd ad=ad height=height width=width}}
+  {{> adManagerAd ad=ad height=height width=width maxHeight=maxHeight maxWidth=maxWidth}}
 </template>
 
 <template name="adManagerAd">
   {{#with ad}}
     <a href="{{url}}" target="_blank">
-     <img src="{{imageUrl}}" height="{{../height}}" width="{{../width}}" style="max-width: 100%;" />
+     <img src="{{imageUrl}}" height="{{../height}}" width="{{../width}}"
+      style="max-width: 100%; max-height: {{../maxHeight}} max-width: {{../maxWidth}}" />
     </a>
   {{/with}}
 </template>
