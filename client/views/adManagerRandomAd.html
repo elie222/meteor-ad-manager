@@ -6,7 +6,8 @@
   {{#with ad}}
     <a href="{{url}}" target="_blank">
      <img src="{{imageUrl}}" height="{{../height}}" width="{{../width}}"
-      style="max-width: 100%; max-height: {{../maxHeight}} max-width: {{../maxWidth}}" />
+      style="{{#if ../maxWidth}}max-width: {{../maxWidth}};{{else}}max-width: 100%;{{/if}}
+        {{#if ../maxHeight}}max-height: {{../maxHeight}};{{/if}}" />
     </a>
   {{/with}}
 </template>
