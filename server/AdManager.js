@@ -30,3 +30,8 @@ AdManager.cacheAdverts = new ValidatedMethod({
     AdManager._cacheAdverts();
   }
 });
+
+DDPRateLimiter.addRule({
+  type: 'method',
+  name: 'AdManager.clickAdvert'
+}, 1, 5000);
