@@ -32,7 +32,7 @@ function configure(api) {
   api.use('random');
   api.use('templating');
   api.use('reactive-var');
-  api.use('ddp-rate-limiter@1.0.2')
+  api.use('ddp-rate-limiter@1.0.0')
   api.use('aldeed:simple-schema@1.4.0');
   api.use('aldeed:collection2@2.6.0');
   api.use('aldeed:autoform@4.0.0 || 5.0.0');
