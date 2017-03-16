@@ -1,8 +1,8 @@
 Package.describe({
   summary: "Management tools adverts for advertisements.",
-  version: "1.2.3",
+  version: "1.2.4",
   name: "elie:ad-manager",
-  git: "https://github.com/elie222/meteor-ad-manager.git"
+  git: "https://github.com/elie222/meteor-ad-manager.git",
 });
 
 Package.onUse(function(api) {
@@ -32,7 +32,7 @@ function configure(api) {
   api.use('random');
   api.use('templating');
   api.use('reactive-var');
-  api.use('ddp-rate-limiter@1.0.0')
+  api.use('ddp-rate-limiter@1.0.0');
   api.use('aldeed:simple-schema@1.4.0');
   api.use('aldeed:collection2@2.6.0');
   api.use('aldeed:autoform@4.0.0 || 5.0.0');
@@ -40,7 +40,7 @@ function configure(api) {
   api.use('mdg:validated-method@0.2.2');
   api.use('alanning:roles@1.2.14');
   api.use('zimme:collection-timestampable@1.0.9');
-  api.use('okgrow:analytics@1.0.4', { weak: true });
+  api.use('okgrow:analytics@1.0.9', { weak: true });
 
   // both
   api.addFiles('lib/helpers.js');
